@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/***********************************Tag selectors**********************************/
+h1{
+    color:rgb(245, 34, 34);
+    font-size: 50px;
+}
+h2{
+    color:burlywood;
+    font-size:50px;
+}
+p{
+    color: rgb(251, 25, 25);
+    font-size: medium;
+}
+p1{
+    color: rgb(220, 169, 102);
+    font-size: larger;
+}
+/****************************CLASS SELECTORS********************************/
+.Tomato:hover{
+    background-color: rgb(251, 25, 25);
+}
+.Potato:hover{
+    background-color: rgb(214, 139, 40);
+}
+.circular{
+    border-radius: 200%;
+}
+/****************************ID SELECTORS********************************/
+#heading{
+    color:aqua;
+}
