@@ -21,12 +21,12 @@ app.get("/", function (req, res) {
   where callback is a function that executes when a request is received.*/
 
 app.get("/about", function (req, res) {
-    res.send("Hello i am nanditha who is a beginner who is starting to understand node and express js feel free to contact for other details at nanditha@gmail.com");
+    res.send("Hello i am luxx who is a beginner who is starting to understand node and express js feel free to contact for other details at lux@gmail.com");
 });
 
 
 app.get("/contact", function (req, res) {
-    res.send("Howdy you can contact me at nanditha@gmail.com");
+    res.send("Howdy you can contact me at lux@gmail.com");
 });
 
 
