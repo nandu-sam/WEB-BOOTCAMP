@@ -61,6 +61,9 @@ app.get("/posts/:postName",(req, res)=>{
       if(post.title.includes(requestedTitle)){
          console.log("Match found");
       }
+      else{
+        console.log("Match Not Found");
+      }
   });
 });
 
