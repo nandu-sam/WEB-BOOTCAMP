@@ -4,7 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const { redirect } = require("express/lib/response");
-const { forEach } = require("lodash");
+const { forEach, lowerCase } = require("lodash");
+const _ = require('lodash');
 
 
 
@@ -22,53 +23,69 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 let posts=[];
+// home page
+app.get('/', function(req, res){
 
-app.get("/", function (req, res) {
-  res.render("home", { StartingContent: homeStartingContent,
-  posts:posts });
+    res.render('home', { homeStartingContent: homeStartingContent, posts: posts});
+})
+
+
+// about page
+app.get('/about', function(req, res){
+
+    res.render('about', { aboutContent: aboutContent});
+})
+
+
+// contact page
+app.get('/contact', function(req, res){
+
+    res.render('contact', { contactContent: contactContent});
+})
+
+
+// compose page
+app.get('/compose', function(req, res){
+
+    res.render('compose');
+})
+
+
+// post :postTitle
+app.get('/posts/:postTitle', function(req, res){
+
+    let requestTitle = _.lowerCase(req.params.postTitle);
+
+    console.log('requestTitle', requestTitle);
+
+    posts.forEach(function(post){
+        if(_.lowerCase(post.postTitle) === requestTitle){
+
+            res.render('post', {post: post});
+        };
+    });
+
 });
 
-app.get("/about", function (req, res) {
-  res.render("about", { aboutContent: aboutContent });
-});
 
-app.get("/contact", function (req, res) {
-  res.render("contact", { contactContent: contactContent });
-});
+app.post('/compose', function(req, res){
 
-app.get("/compose", function (req, res) {
-  res.render("compose");
-});
+    let postTitle = req.body.postTitle;
+    let postBody = req.body.postBody;
 
-app.post("/compose", function (req, res) {
-  const post={
-    title:req.body.postTitle,
-    content:req.body.postBody
-  };
-  posts.push(post);
-  res.redirect("/");
-});
-/*app.get('/posts/:testing',(req,res)=>{
-  console.log(req.params.testing);
-});*/
+    let postObj = {
+        postTitle: postTitle,
+        postBody: postBody
+    };
 
-app.get("/posts/:postName",(req, res)=>{
-  let requestedTitle=req.params.postName;
+    posts.push(postObj);
 
-  posts.forEach(function(post){
-    //let storedTitle=post.title;
-    //if(storedTitle===requestedTitle){
-      if(post.title.includes(requestedTitle)){
-         console.log("Match found");
-      }
-      else{
-        console.log("Match Not Found");
-      }
-  });
+    res.redirect('/');
+
 });
 
 
 
-app.listen(3000, function () {
+app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
