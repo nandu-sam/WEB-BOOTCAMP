@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // Set up default mongoose connection
-mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
+mongoose.connect("mongodb+srv://admin-sam:NandithaNandu@cluster0.xu3jenz.mongodb.net/todolistDB");
 
 // Mongoose Schema for individual to-do list items
 const itemSchema = new mongoose.Schema({
