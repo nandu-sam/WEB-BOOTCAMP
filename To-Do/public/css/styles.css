@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Roboto&display=swap');
 html {
-    background-color: #F7E6C4;
-    background-image: -webkit-linear-gradient(65deg, #FFF4F4 50%, #F7E6C4 50%);
+    background-color: #D2E9E9;
+    background-image: -webkit-linear-gradient(65deg, #AEE2FF 50%, #D2E9E9 50%);
     min-height: 1000px;
     font-family: 'Montserrat', sans-serif;
   }
   
   h1 {
-    color: #221e1e;
+    color: #fff7f7;
     padding: 10px;
   }
   
@@ -20,7 +20,7 @@ html {
   }
   
   #heading {
-    background-color: #FFF4F4;
+    background-color: #79E0EE;
     text-align: center;
   }
   
@@ -37,7 +37,7 @@ html {
   
   input:checked+p {
     text-decoration: line-through;
-    text-decoration-color: #FFF4F4;
+    text-decoration-color: #79E0EE;
   }
   
   input[type="checkbox"] {
@@ -62,8 +62,8 @@ html {
     width: 50px;
     border-radius: 50%;
     border-color: transparent;
-    background-color: #FFF4F4;
-    color: #1d1a1a;
+    background-color: #79E0EE;
+    color: #faf1f1;
     font-size: 30px;
     /* padding-bottom: 6px; */
     border-width: 0;
@@ -83,7 +83,7 @@ html {
   
   input[type="text"]:focus {
     outline: none;
-    box-shadow: inset 0 -3px 0 0 #FFF4F4;
+    box-shadow: inset 0 -3px 0 0 #AEE2FF;
   }
   
   ::placeholder {
