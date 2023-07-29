@@ -1,6 +1,6 @@
-import Book from "./Book"; //whatever we write in book it is rendered here
+import Book from "./Book"; //whatever we write in book it is rendered here imported from Book.js
 //whatever written in booklist renders in index.js
-import React from "react";
+import React from "react";//importing react libraries or dependecies 
 //Array of objects
 import books from "./books.json";
 const BookList = () => {

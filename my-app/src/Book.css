@@ -1,17 +1,17 @@
 .book {
-  display: flex;
-  align-items: center;
+  display: flex; /*The container or the div will automatically inherits the properties of flex */
+  align-items: center; /* property of flex box*/
   margin-bottom: 20px;
   border: 1px solid#ddd;
   border-radius: 5px;
   padding: 10px;
 }
 .book-image {
-  flex: 0 0 100px;
+  flex: 0 0 100px; /* the whole width or the dimension or how our screen needs to look using flex box or flex properties*/
   margin-right: 20px;
 }
 .book-image img {
-  display: block;
+  display: block; /*block or in line*/
   max-width: 100px;
   height: auto;
 }
