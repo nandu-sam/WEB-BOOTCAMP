@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 //stateless functional component
-import BookList from "./BookList";
+import Data from "./Data";
 
 const root = ReactDOM.createRoot(document.getElementById("root")); //method create root method in react
 
 root.render(
   <React.StrictMode>
-    <BookList />
+    <Data />
   </React.StrictMode> //this is a developer mode
 );
