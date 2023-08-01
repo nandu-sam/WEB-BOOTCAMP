@@ -4,12 +4,12 @@ const GreetingForm = () => {
   const [name, setName] = useState("");
   const [greeting, setGreeting] = useState("");
 
-  const handleChange = (event) => {
-    setName(event.target.value);
+  const handleChange = (e) => {
+    setName(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setGreeting(`Hello, ${name}!`);
     setName(""); // Reset the name input field after submitting the form
   };
@@ -21,6 +21,7 @@ const GreetingForm = () => {
           Enter your name:
           <input type="text" value={name} onChange={handleChange} />
         </label>
+        <br />
         <button type="submit">Submit</button>
       </form>
       {greeting && <p>{greeting}</p>}
