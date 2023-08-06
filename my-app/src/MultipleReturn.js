@@ -8,7 +8,7 @@ const MultipleReturn = () => {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("https://api.github.com/users");
+        const response = await fetch("https://api.gihub.com/users");
         const data = await response.json();
         setUsers(data);
         setisLoading(false);
